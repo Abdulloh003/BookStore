@@ -14,9 +14,31 @@ public class UserController : ControllerBase
     {
         _userService = userService;
     }
-    [HttpGet("GetAddresses")]
+    [HttpGet("GetAuthorandBooks")]
     public async Task<Response<List<BookDto>>> Get()
     {
         return await _userService.GetAuthorandBooks();
     }
+    [HttpGet("GetPublishersBook")]
+    public async Task<Response<List<PublisherDto>>> GetPublishersBook()
+    {
+        return await _userService.GetPublishersBook();
+    }
+    [HttpGet("GetAuthorbooks")]
+    public async Task<Response<List<AuthorDto>>> GetAuthorbooks()
+    {
+        return await _userService.GetAuthorbooks();
+    }
+    [HttpGet("GetBookandReviews")]
+    public async Task<Response<List<BookReviewDto>>> GetBookandReviews()
+    {
+        return await _userService.GetBookandReviews();
+    }
+    [HttpGet("GetBookandReviewsV2")]
+    public async Task<Response<List<AuthorDtoV2>>> GetBookandReviewsV2()
+    {
+        return await _userService.GetBookOfAuthot();
+    }
+    
+    
 }

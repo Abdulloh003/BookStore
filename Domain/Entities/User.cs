@@ -18,10 +18,6 @@ public class User:Person
         
     }
     public List<Review> Reviews { get; set; }
-
-    public User()
-    {
-        
-    }
+    
 }
  
