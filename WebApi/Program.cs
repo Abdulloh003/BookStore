@@ -1,7 +1,7 @@
 
 using Infrastructure.Data;
 using Infrastructure.MapperProfiles;
-
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<DataContext>(conf => conf.UseNpgsql(connection));
 builder.Services.AddControllers();
+builder.Services.AddScoped<UserService>();
 //configure automapper
 builder.Services.AddAutoMapper(typeof(InfrastructureProfile));
 
