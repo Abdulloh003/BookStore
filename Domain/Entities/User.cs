@@ -12,6 +12,11 @@ public class User:Person
         Email = email;
         Password = password;
     }
+
+    public User()
+    {
+        
+    }
     public List<Review> Reviews { get; set; }
 
     public User()

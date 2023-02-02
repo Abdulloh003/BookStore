@@ -1,6 +1,7 @@
 
 using Infrastructure.Data;
 using Infrastructure.MapperProfiles;
+using Infrastructure.SeedData;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+
+//seed 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -28,11 +32,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var scope = app.Services.CreateScope();
-var services = scope.ServiceProvider;
-var context = services.GetRequiredService<DataContext>();
-context.Database.Migrate();
-
+try
+{
+    var scope = app.Services.CreateScope();
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<DataContext>();
+    context.Database.Migrate();
+    SeedData.Seed(context);
+}
+catch (Exception ex)
+{
+    app.Logger.LogError(ex.Message);
+}
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

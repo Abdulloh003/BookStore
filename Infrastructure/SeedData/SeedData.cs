@@ -32,12 +32,12 @@ public static  class SeedData
         
         var books = new List<Book>()
         {
-            new Book(1, "Mathematics", DateTime.Now.AddYears(-10), 44, 55, "test", "famous book", "no for now", 1, 1),
-            new Book(2, "Physics", DateTime.Now.AddYears(-10), 44, 55, "test", "famous book", "no for now", 2, 2),
-            new Book(3, "Chemistry", DateTime.Now.AddYears(-10), 44, 55, "test", "famous book", "no for now", 2, 3),
-            new Book(4, "Biology", DateTime.Now.AddYears(-10), 44, 55, "test", "famous book", "no for now", 3, 4),
-            new Book(5, "English", DateTime.Now.AddYears(-10), 44, 55, "test", "famous book", "no for now", 3, 5),
-            new Book(6, "Mathematics", DateTime.Now.AddYears(-10), 44, 55, "test", "famous book", "no for now", 1, 1),
+            new Book(1, "Mathematics", DateTime.UtcNow.AddYears(-10), 44, 55, "test", "famous book", "no for now", 1, 1),
+            new Book(2, "Physics", DateTime.UtcNow.AddYears(-10), 44, 55, "test", "famous book", "no for now", 2, 2),
+            new Book(3, "Chemistry", DateTime.UtcNow.AddYears(-10), 44, 55, "test", "famous book", "no for now", 2, 3),
+            new Book(4, "Biology", DateTime.UtcNow.AddYears(-10), 44, 55, "test", "famous book", "no for now", 3, 4),
+            new Book(5, "English", DateTime.UtcNow.AddYears(-10), 44, 55, "test", "famous book", "no for now", 3, 5),
+            new Book(6, "Mathematics", DateTime.UtcNow.AddYears(-10), 44, 55, "test", "famous book", "no for now", 1, 1),
         };
 
         var bookAuthors = new List<BookAuthor>()
